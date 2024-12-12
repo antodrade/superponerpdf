@@ -22,19 +22,41 @@ export class PdfService {
 
   async addTextToPdf(existingPdfBytes: Uint8Array, text: string, text2: string, text3: string, text4: string, text5: string, text6: string, text7: string,text8: string,
     text9: string, text10: string, text11: string, text12: string, text13: string, text14: string, text15: string, text16: string, text17: string, text18: string, text19: string,
-    x: number, y: number, x2: number, y2: number,  x3: number, y3: number, x4: number, y4: number, x5: number, y5: number,x6: number, y6: number,
+    text20: string,text21: string,text22: string,text23: string,text24: string,text25: string,text26: string,text27: string, text28: string, text29: string, text30: string,
+    text31: string, text32: string, x: number, y: number, x2: number, y2: number,  x3: number, y3: number, x4: number, y4: number, x5: number, y5: number,x6: number, y6: number,
      x7: number, y7: number,x8: number, y8: number, x9: number, y9: number, x10: number, y10: number,  x11: number, y11: number, x12: number, y12: number, 
-     x13: number, y13: number,x14: number, y14: number,x15: number, y15: number,  x16: number, y16: number,x17: number, y17: number,x18: number, y18: number ,x19: number, y19: number) {
+     x13: number, y13: number,x14: number, y14: number,x15: number, y15: number,  x16: number, y16: number,x17: number, y17: number,x18: number, y18: number, 
+     x19: number, y19: number, x20: number, y20: number, x21: number, y21: number, x22: number, y22: number,x23: number, y23: number,x24: number, y24: number,
+     x25: number, y25: number,x26: number, y26: number,x27: number, y27: number,x28: number, y28: number,x29: number, y29: number,x30: number, y30: number,
+     x31: number, y31: number,x32: number, y32: number) {
     // Cargar el PDF existente
     const pdfDoc = await PDFDocument.load(existingPdfBytes);
 
     // Obtener la primera página (puedes seleccionar otra página si es necesario)
     const page = pdfDoc.getPages()[0];
 
+    //siguiente página
+    const page2 = pdfDoc.getPages()[1];
+
     // Establecer una fuente estándar
     const font = await pdfDoc.embedFont(StandardFonts.Helvetica);;
 
     // Escribir el texto en las coordenadas (x, y)
+    page.drawText(text31, {
+      x: x31,
+      y: y31,
+      font: font,
+      size: 12,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+
+    page.drawText(text32, {
+      x: x32,
+      y: y32,
+      font: font,
+      size: 12,
+      color: rgb(0, 0, 0),  // Color negro
+    });
     page.drawText(text, {
       x: x,
       y: y,
@@ -192,6 +214,86 @@ export class PdfService {
       y: y19,
       font: font,
       size: 12,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+    page.drawText(text20, {
+      x: x20,
+      y: y20,
+      font: font,
+      size: 12,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+    page.drawText(text21, {
+      x: x21,
+      y: y21,
+      font: font,
+      size: 10,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+    page.drawText(text22, {
+      x: x22,
+      y: y22,
+      font: font,
+      size: 12,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+    page.drawText(text23, {
+      x: x23,
+      y: y23,
+      font: font,
+      size: 12,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+    page.drawText(text24, {
+      x: x24,
+      y: y24,
+      font: font,
+      size: 12,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+    page.drawText(text25, {
+      x: x25,
+      y: y25,
+      font: font,
+      size: 8,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+    page.drawText(text26, {
+      x: x26,
+      y: y26,
+      font: font,
+      size: 12,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+    page.drawText(text27, {
+      x: x27,
+      y: y27,
+      font: font,
+      size: 12,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+
+    page2.drawText(text28, {
+      x: x28,
+      y: y28,
+      font: font,
+      size: 8,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+
+    page2.drawText(text29, {
+      x: x29,
+      y: y29,
+      font: font,
+      size: 10,
+      color: rgb(0, 0, 0),  // Color negro
+    });
+
+    page2.drawText(text30, {
+      x: x30,
+      y: y30,
+      font: font,
+      size: 10,
       color: rgb(0, 0, 0),  // Color negro
     });
     // Guardar el PDF modificado
