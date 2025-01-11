@@ -17,16 +17,21 @@
 // app.component.ts
 import { Component } from '@angular/core';
 import { PdfService } from './pdf.service';
+import { Formulario } from '../models/formulario';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  imports: [FormsModule]
 })
 export class AppComponent {
 
-  constructor(private pdfService: PdfService) {}
+  formulario: Formulario = new Formulario();
+
+  constructor(private pdfService: PdfService, ) {}
 
   async handleFileInput(event: any) {
     // Obtener el archivo PDF cargado
@@ -69,36 +74,40 @@ export class AppComponent {
     // const text30 = 'Cargo: Asesor comercial'
     const text31 = 'x';
     const text32 = 'x';
-    const text = 'Povea';
-    const text2 = 'Gonzales';
-    const text3 = 'Nohelia';
-    const text4 = '';
+    const text = 'Serrano';
+    const text2 = 'Solano';
+    const text3 = this.formulario.nombre1;
+    const text4 = this.formulario.nombre2;
     const text5 = 'CC';
-    const text6 = '55.312.147';
+    const text6 = '32.787.976';
     const text7 = 'x'
-    const text8 = '2  2 0 7 1 9 8  5'
+    const text8 = '0  5 0 3 1 9 7  6'
     const text9 = 'ARL SURA';
     const text10 = 'Colfondos';
     const text11 = '1300000'
-    const text12 = 'Calle 61 # 45-23'
-    const text13 = '3452012';
-    const text14 = '3003315647';
-    const text15 = 'noheliapov25@gmail.com';
+    const text12 = 'Calle 96 # 45-24'
+    const text13 = '3412384';
+    const text14 = '3009872354';
+    const text15 = 'luzserrasolok@gmail.com';
     const text16 = 'Barranquilla';
     const text17 = 'x';
     const text18 = '';
     const text19 = 'Atlántico';
-    const text20 = 'Great features SAS'
+    const text20 = 'Soft Skills Managementent SAS'
     const text21 = 'N    I    T'
-    const text22 = '901256296';
+    const text22 = '901813325';
     const text23 = 'cra 52 # 74-80'
     const text24 = '3452012'
-    const text25 = 'greatfeaturescolcol@gmail.com';
+    const text25 = 'softskillsmanagementcol@gmail.com';
     const text26 = 'Barranquilla'
     const text27 = 'Atlántico'
-    const text28 = '0   1   1   2   2   0   2   4'
+    const text28 = '0   1   0   1   2   0   2   5'
     const text29 = 'Comfamiliar del Atlántico'
     const text30 = 'Cargo: Asesor comercial'
+
+
+
+
     const x31 = 70;  // Coordenada X
     const y31 = 662;  // Coordenada Y
     const x32 = 268; // Coordenada X
@@ -115,7 +124,7 @@ export class AppComponent {
     const y5 = 600;  // Coordenada Y
     const x6 = 170;  // Coordenada X
     const y6 = 600;  // Coordenada Y
-    const x7 = 430;  // Coordenada X
+    const x7 = 385;  // Coordenada X
     const y7 = 603;  // Coordenada Y
     const x8 = 492;  // Coordenada X
     const y8 = 603;  // Coordenada Y
