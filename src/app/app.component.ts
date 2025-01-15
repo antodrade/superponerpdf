@@ -19,19 +19,21 @@ import { Component } from '@angular/core';
 import { PdfService } from './pdf.service';
 import { Formulario } from '../models/formulario';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from "./components/navbar/navbar.component";
+import { FormComponent } from './components/form/form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [FormsModule]
+  imports: [FormsModule, NavbarComponent,FormComponent ]
 })
 export class AppComponent {
 
   formulario: Formulario = new Formulario();
 
-  constructor(private pdfService: PdfService, ) {}
+  constructor(private pdfService: PdfService ) {}
 
   async handleFileInput(event: any) {
     // Obtener el archivo PDF cargado
