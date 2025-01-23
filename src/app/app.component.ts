@@ -21,13 +21,14 @@ import { Formulario } from '../models/formulario';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FormComponent } from './components/form/form.component';
+import { PruebaComponent } from "./components/prueba/prueba.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [FormsModule, NavbarComponent,FormComponent ]
+  imports: [FormsModule, NavbarComponent, FormComponent, PruebaComponent]
 })
 export class AppComponent {
 
